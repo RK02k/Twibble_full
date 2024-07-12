@@ -83,7 +83,7 @@
 //         <form onSubmit={handleTweet}>
 //          <div className="tweetBox__input">
 //          <Avatar src={loggedInUser[0]?.profileImage || "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"}></Avatar>
-//          <input type="text" placeholder={t('home2')} onChange={(e) =>setPost(e.target.value)} value={post} required/>
+//          <input type="text" placeholder={t('home2')} onChange={(e) =>setPost(e.target.value)} value={post}/>
 //          </div>
 //          <div className="imageIcon_tweetButton">
 //             <label htmlFor="image" className="imageIcon">
@@ -190,7 +190,7 @@ const Tweetbox = () => {
       <form onSubmit={handleTweet}>
         <div className="tweetBox__input">
           <Avatar src={loggedInUser[0]?.profileImage || "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"}></Avatar>
-          <input type="text" placeholder={t('home2')} onChange={(e) => setPost(e.target.value)} value={post} required />
+          <input type="text" placeholder={t('home2')} onChange={(e) => setPost(e.target.value)} value={post} />
         </div>
         <div className="imageIcon_tweetButton">
           <label htmlFor="image" className="imageIcon">

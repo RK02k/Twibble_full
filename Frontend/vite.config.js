@@ -11,11 +11,12 @@
 //   }
 // });
 
+import { defineConfig } from 'vite';
 import vitePluginRequire from "vite-plugin-require";
 import react from '@vitejs/plugin-react';
 
-export default {
+export default defineConfig( {
 	plugins: [react(),
         vitePluginRequire.default()
 	],
-};
+});

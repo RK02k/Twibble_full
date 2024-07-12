@@ -39,7 +39,7 @@ function Signup() {
                     plan: 'free',
                     language:'english' // Adding the plan property here
                 };
-                axios.post('http://localhost:5000/register', user);
+                axios.post('https://twibb.vercel.app/register', user);
             })
             .catch(err => {
                 console.log(err)

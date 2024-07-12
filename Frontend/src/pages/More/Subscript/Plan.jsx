@@ -16,7 +16,7 @@ const Plan = () => {
 
   const checkout = async (plan) => {
     try {
-      const response = await axios.post("http://localhost:5000/createStripeSession", {
+      const response = await axios.post("https://twibb.vercel.app/createStripeSession", {
         plan,
         customerId: user?.email,
       });

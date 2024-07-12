@@ -16,7 +16,7 @@ const Explore = () =>{
     const fetchPosts = async () => {
       try {
         // Ensure the URL matches the server route
-        const response = await axios.get('http://localhost:5000/post');
+        const response = await axios.get('https://twibb.vercel.app/post');
         setPosts(response.data);
       } catch (error) {
         console.error('Error fetching posts:', error);

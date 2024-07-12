@@ -33,7 +33,7 @@ function Login() {
   const handleOtpSubmit = async () => {
     try {
       const payload = { email, otp };
-      const response = await axios.post('http://localhost:5000/api/otp/verifyOtp', payload);
+      const response = await axios.post('https://twibb.vercel.app/api/otp/verifyOtp', payload);
       if (response.data.valid) {
         console.log('OTP verified successfully');
         await signInWithEmailAndPassword(email, password);
@@ -62,7 +62,7 @@ function Login() {
         ip,
       };
 
-      const response = await axios.post('http://localhost:5000/api/login', loginInfo);
+      const response = await axios.post('https://twibb.vercel.app/api/login', loginInfo);
 
       if (response.data.otpRequired) {
         setOtpSent(true);

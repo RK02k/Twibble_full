@@ -35,7 +35,7 @@ const Language = () => {
     const handleSave = async (language) => {
         const editedInfo = { language };
         try {
-            await axios.patch(`http://localhost:5000/userUpdates/${user?.email}`, editedInfo);
+            await axios.patch(`https://twibb.vercel.app/userUpdates/${user?.email}`, editedInfo);
         } catch (error) {
             console.error("Error updating language:", error);
         }
@@ -43,7 +43,7 @@ const Language = () => {
 
     const sendOtp = async () => {
         try {
-            const response = await axios.post('http://localhost:5000/api/otp/sendotp', { email: user.email });
+            const response = await axios.post('https://twibb.vercel.app/api/otp/sendotp', { email: user.email });
             if (response.data.success) {
                 alert('OTP sent successfully');
             } else {
@@ -56,7 +56,7 @@ const Language = () => {
 
     const verifyOtp = async () => {
         try {
-            const response = await axios.post('http://localhost:5000/otp/verifyOtp', { email: user.email, otp });
+            const response = await axios.post('https://twibb.vercel.app/otp/verifyOtp', { email: user.email, otp });
             if (response.data.valid) {
                 setIsVerified(true);
                 changeLanguage(selectedLang);

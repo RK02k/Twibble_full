@@ -22,7 +22,7 @@ const MainPage = ({ user }) => {
   console.log(loggedInUser)
 
   useEffect(() => {
-    fetch(`http://localhost:5000/userPost?email=${user?.email}`)
+    fetch(`https://twibb.vercel.app/userPost?email=${user?.email}`)
       .then(res => res.json())
       .then(data => {
         setPosts(data);
@@ -39,7 +39,7 @@ const MainPage = ({ user }) => {
       const userCoverImage = { email: user?.email, coverImage: url };
       setIsLoading(false);
       if (url) {
-        axios.patch(`http://localhost:5000/userUpdates/${user?.email}`, userCoverImage);
+        axios.patch(`https://twibb.vercel.app/userUpdates/${user?.email}`, userCoverImage);
       }
     });
   };
@@ -54,7 +54,7 @@ const MainPage = ({ user }) => {
       const userProfileImage = { email: user?.email, profileImage: url };
       setIsLoading(false);
       if (url) {
-        axios.patch(`http://localhost:5000/userUpdates/${user?.email}`, userProfileImage);
+        axios.patch(`https://twibb.vercel.app/userUpdates/${user?.email}`, userProfileImage);
       }
     });
   };

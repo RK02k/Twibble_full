@@ -69,7 +69,7 @@ export default function EditProfile ({user,LoggedInUser}){
         }
         if(editedInfo)
         {
-        await axios.patch(`http://localhost:5000/userUpdates/${user?.email}`,editedInfo)
+        await axios.patch(`https://twibb.vercel.app/userUpdates/${user?.email}`,editedInfo)
         setOpen(false)
         }
     }

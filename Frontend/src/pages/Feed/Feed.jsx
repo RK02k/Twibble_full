@@ -9,7 +9,7 @@ function Feed ()
     const { t } = useTranslation();
     const [posts,setPosts] = useState([])
     useEffect(() =>{
-        fetch('http://localhost:5000/post').then(res => res.json()).then(data => {
+        fetch('https://twibb.vercel.app/post').then(res => res.json()).then(data => {
             setPosts(data)
         },[posts])
     })

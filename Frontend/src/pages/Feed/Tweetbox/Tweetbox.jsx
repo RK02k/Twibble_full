@@ -42,7 +42,7 @@
 //         e.preventDefault();
 //          console.log(user.providerData[0].providerId)
 //         if(user.providerData[0].providerId === 'password'){
-//             fetch(`http://localhost:5000/loggedInUser?email=${email}`).then(res => res.json()).then(data => {
+//             fetch(`https://twibb.vercel.app/loggedInUser?email=${email}`).then(res => res.json()).then(data => {
 //                 setName(data[0]?.name)
 //                 setUsername(data[0]?.username)
 //             })
@@ -66,7 +66,7 @@
 //             // console.log(userPost)
 //             setPost('')
 //             setImageURL('')
-//             fetch(`http://localhost:5000/post`,{
+//             fetch(`https://twibb.vercel.app/post`,{
 //                 method:"POST",
 //                 headers :{
 //                     'content-type':'application/json'
@@ -145,7 +145,7 @@ const Tweetbox = () => {
   const handleTweet = (e) => {
     e.preventDefault();
     if (user.providerData[0].providerId === 'password') {
-      fetch(`http://localhost:5000/loggedInUser?email=${email}`).then(res => res.json()).then(data => {
+      fetch(`https://twibb.vercel.app/loggedInUser?email=${email}`).then(res => res.json()).then(data => {
         setName(data[0]?.name);
         setUsername(data[0]?.username);
       });
@@ -164,7 +164,7 @@ const Tweetbox = () => {
       };
       setPost('');
       setImageURL('');
-      fetch(`http://localhost:5000/post`, {
+      fetch(`https://twibb.vercel.app/post`, {
         method: "POST",
         headers: {
           'content-type': 'application/json'

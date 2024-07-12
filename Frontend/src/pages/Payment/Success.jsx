@@ -20,7 +20,7 @@ const Success = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/payment-success", {
+      const response = await axios.post("https://twibb.vercel.app/payment-success", {
         sessionId: sessionId,
         firebaseId: user?.email
       });

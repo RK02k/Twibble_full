@@ -1,15 +1,6 @@
 {  
-  "routes":[
-                 { "src": "/[^.]+",
-                  "dest":"/" }
-  ],  "rewrites": [
-    { "source": "/locales/:path*", "destination": "/locales/:path*" }
-  ],
-  "builds": [
-    {
-      "src": "public/locales/*",
-      "use": "@vercel/static"
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
 

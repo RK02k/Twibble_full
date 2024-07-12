@@ -11,7 +11,6 @@ const userLoggedInUser = () =>
 
  useEffect(() =>{
     fetch(`https://twibb.vercel.app/loggedInUser?email=${email}`).then(res => res.json()).then(data => {
-        // console.log(data)
         setLoggedInUser(data)
     })
  },[email,loggedInUser])

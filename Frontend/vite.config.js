@@ -14,7 +14,7 @@
 import vitePluginRequire from "vite-plugin-require";
 
 export default {
-	plugins: [  
+	plugins: [react(),
         vitePluginRequire.default()
 	],
 };

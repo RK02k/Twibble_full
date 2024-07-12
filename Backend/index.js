@@ -7,9 +7,8 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const bodyParser = require("body-parser");
 const moment = require("moment");
 const otpGenerator = require('otp-generator');
-const geoip = require('geoip-lite');
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 
 const app = express();

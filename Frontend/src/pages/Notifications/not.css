@@ -1,0 +1,31 @@
+.page {
+    padding: 20px;
+  }
+  
+  .pageTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .notificationsList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .notificationItem {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .notificationItem p {
+    margin: 0;
+  }
+  
+  .notificationItem .timestamp {
+    font-size: 0.8rem;
+    color: #666;
+  }
+  

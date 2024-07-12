@@ -1,0 +1,54 @@
+.sideOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-bottom: 5px;
+  /* padding: 10px 20px;
+  transition: background-color 0.2s ease; */
+
+}
+
+.sideOption:hover {
+  /* background-color: rgba(29, 161, 242, 0.1); */
+  background-color: #e8f5fe;
+  border-radius: 30px;
+  color: var(--twitter-color);
+  transition: color 100ms ease-out;
+}
+
+.sideOption>.MuiSvgIcon-root {
+  padding: 10px 15px;
+}
+
+.sideOption>h2 {
+  font-weight: 600;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.done__icon {
+  color: var(--twitter-color) !important;
+}
+
+@media screen and (max-width:688px) {
+  .sidebar__tweet {
+    display: none;
+  }
+}
+
+/* .sideOption__icon {
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+.sideOption__text {
+  font-size: 18px; /* Increased text size */
+  /* font-weight: 700; */
+/* } */
+
+/* Ensure the twibble icon is properly styled */
+/* .tdm-icon { */
+  /* font-size: 24px !important; Smaller size compared to the other icons */
+  /* margin: 0 auto; Center the icon horizontally  */
+  /* display: block; To make sure margin: 0 auto works */
+/* } */ 

@@ -1,42 +1,15 @@
-// import { defineConfig } from 'vite';
-// import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import vitePluginRequire from "vite-plugin-require";
 
-// export default defineConfig({
-//   plugins: [react()],
-//   build: {
-//     rollupOptions: {
-//       external: ['scriptjs']
-//     }
-//   }
-// });
-
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import * as path from "path";
-
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }]
-  },
-  // Fix large chunks issue due to node_modules
+  plugins: [react(),	plugins: [  
+    vitePluginRequire.default()
+],],
   build: {
     rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes("node_modules")) {
-            return id
-              .toString()
-              .split("node_modules/")[1]
-              .split("/")[0]
-              .toString();
-          }
-        }
-      }
-    },
-    commonjsOptions: {
-      transformMixedEsModules: true
+      external: ['scriptjs',]
     }
   }
 });
+

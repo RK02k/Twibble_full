@@ -4,7 +4,6 @@ import Widgets from "./Widgets/Widgets"
 import auth from "../firebase.init"
 import {useAuthState} from 'react-firebase-hooks/auth'
 import { signOut } from "firebase/auth"
-import userLoggedInUser from "../hooks/userLoggedInUser"
 
 function Home()
 {

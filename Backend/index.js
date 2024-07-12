@@ -15,7 +15,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 const corsOptions = {
-  origin: 'https://twibbleproject.vercel.app/', // Specify your frontend domain
+  origin: 'https://twibbleproject-git-main-rajks-projects.vercel.app/', // Specify your frontend domain
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // Allow cookies to be sent
   optionsSuccessStatus: 204

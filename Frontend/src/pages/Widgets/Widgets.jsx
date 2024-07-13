@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Widgets.css";
 import SearchIcon from '@mui/icons-material/Search';
-import { TwitterTimelineEmbed, TwitterTweetEmbed } from 'react-twitter-embed';
+// import { TwitterTimelineEmbed, TwitterTweetEmbed } from 'react-twitter-embed';
 import { useTranslation } from 'react-i18next';
 
 function Widgets() {
@@ -16,8 +16,8 @@ function Widgets() {
       <div className="widgets__widgetContainer">
         <h2>{t('home2')}</h2>
       </div>
-      <TwitterTweetEmbed tweetId={'933354946111705097'} />
-      <TwitterTimelineEmbed sourceType="profile" screenName="elonmusk" options={{ height: 400 }} />
+      {/* <TwitterTweetEmbed tweetId={'933354946111705097'} />
+      <TwitterTimelineEmbed sourceType="profile" screenName="elonmusk" options={{ height: 400 }} /> */}
     </div>
   );
 }

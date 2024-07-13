@@ -345,8 +345,8 @@ async function run() {
               quantity: 1
             },
           ],
-          success_url: "https://twibbleproject.vercel.app/success",
-          cancel_url: "https://twibbleproject.vercel.app//cancel"
+          success_url: "https://courageous-kringle-bab0ed.netlify.app/success",
+          cancel_url: "https://courageous-kringle-bab0ed.netlify.app/cancel"
         });
         return session;
       } catch (e) {

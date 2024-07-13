@@ -345,8 +345,8 @@ async function run() {
               quantity: 1
             },
           ],
-          success_url: "http://localhost:5173/success",
-          cancel_url: "http://localhost:5173/cancel"
+          success_url: "https://courageous-kringle-bab0ed.netlify.app/success",
+          cancel_url: "https://courageous-kringle-bab0ed.netlify.app/cancel"
         });
         return session;
       } catch (e) {

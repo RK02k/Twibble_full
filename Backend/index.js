@@ -14,15 +14,21 @@ const saltRounds = 10;
 const app = express();
 const port = process.env.PORT || 5000;
 
-const corsOptions = {
-  origin: [
-    'https://stately-jelly-49d115.netlify.app', 
-    'https://twibbleproject.vercel.app'
-  ],
-  credentials: true,
-};
+// const corsOptions = {
+//   origin: [
+//     'https://stately-jelly-49d115.netlify.app', 
+//     'https://twibbleproject.vercel.app'
+//   ],
+//   credentials: true,
+// };
 
-app.use(cors(corsOptions));
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://twibbleproject.vercel.app");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+app.use(cors());
 
 const nodemailer = require("nodemailer");
 const { google } = require('googleapis');

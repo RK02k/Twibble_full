@@ -40,8 +40,7 @@
     "react-scripts": "^5.0.1",
     "react-twitter-embed": "^4.0.4",
     "scriptjs": "^2.5.9",
-    "styled-components": "^6.1.11",
-    "vite-plugin-require": "^1.2.14"
+    "styled-components": "^6.1.11"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
@@ -52,6 +51,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "prettier": "3.3.2",
-    "vite": "^5.2.0"
+    "vite": "^5.2.0",
+    "vite-plugin-require": "^1.2.14"
   }
 }

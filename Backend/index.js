@@ -23,8 +23,8 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// Handle preflight requests
-app.options('*', cors(corsOptions));
+// // Handle preflight requests
+// app.options('*', cors(corsOptions));
 
 const nodemailer = require("nodemailer");
 const { google } = require('googleapis');

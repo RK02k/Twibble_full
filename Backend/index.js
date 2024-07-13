@@ -16,17 +16,19 @@ const port = process.env.PORT || 5000;
 
 const allowedOrigins = ['https://courageous-kringle-bab0ed.netlify.app/', 'https://twibbleproject.vercel.app/'];
 
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin) return callback(null, true);  // Allow requests with no origin (like mobile apps or curl requests)
-    if (allowedOrigins.indexOf(origin) === -1) {
-      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-      return callback(new Error(msg), false);
-    }
-    return callback(null, true);
-  },
-  credentials: true
-}));
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     if (!origin) return callback(null, true);  // Allow requests with no origin (like mobile apps or curl requests)
+//     if (allowedOrigins.indexOf(origin) === -1) {
+//       const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+//       return callback(new Error(msg), false);
+//     }
+//     return callback(null, true);
+//   },
+//   credentials: true
+// }));
+
+app.use(cors())
 
 app.use(express.json());
 

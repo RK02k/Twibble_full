@@ -14,13 +14,13 @@ const saltRounds = 10;
 const app = express();
 const port = process.env.PORT || 5000;
 
-// app.use(cors({
-//   origin: ['https://courageous-kringle-bab0ed.netlify.app/', 'https://twibbleproject.vercel.app/'],  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-//   credentials: true, // Allow cookies to be sent
-//   optionsSuccessStatus: 204
-// }));
+app.use(cors({
+  origin: ['https://courageous-kringle-bab0ed.netlify.app/', 'https://twibbleproject.vercel.app/'],  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Allow cookies to be sent
+  optionsSuccessStatus: 204
+}));
 
-app.use(cors({credentials: true}));
+// app.use(cors({credentials: true}));
 
 app.use(express.json());
 

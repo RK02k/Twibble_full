@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     vitePluginRequire.default()
   ],
-  build: {
+  build: {target: 'esnext',
     rollupOptions: {
       external: ['scriptjs']
     }

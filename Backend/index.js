@@ -15,7 +15,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: ['https://6692014bfc1cfbc6c2258464--jovial-liger-2d8cf2.netlify.app/', 'https://twibbleproject.vercel.app/'],  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  origin: ['https://courageous-kringle-bab0ed.netlify.app/', 'https://twibbleproject.vercel.app/'],  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // Allow cookies to be sent
   optionsSuccessStatus: 204
 }));

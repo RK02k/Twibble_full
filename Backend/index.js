@@ -15,10 +15,8 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 const corsOptions = {
-  origin: '*', // Replace with your allowed origin or use '*' to allow all origins
-  methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
-  optionsSuccessStatus: 204
+  origin: 'https://twibbleproject.vercel.app',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
 app.use(cors(corsOptions));

@@ -21,7 +21,7 @@
 //     const [user] = useAuthState(auth)
 //     const email = user?.email
 
-//     const UserProfilePic = loggedInUser[0]?.profileImage?loggedInUser[0].profileImage: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" 
+//     const UserProfilePic = loggedInUser[0]?.profileImage?loggedInUser[0].profileImage: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
 
 //     const handleUploadImage = (e) =>{
 //         setIsLoading(true);
@@ -50,7 +50,7 @@
 //         else
 //         {
 //             setName(user?.displayName)
-//             setUsername(email?.split('@')[0]) 
+//             setUsername(email?.split('@')[0])
 //         }
 //         if(name)
 //         {
@@ -83,7 +83,7 @@
 //         <form onSubmit={handleTweet}>
 //          <div className="tweetBox__input">
 //          <Avatar src={loggedInUser[0]?.profileImage || "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"}></Avatar>
-//          <input type="text" placeholder={t('home2')} onChange={(e) =>setPost(e.target.value)} value={post}/>
+//          <input type="text" placeholder={t('home2')} onChange={(e) =>setPost(e.target.value)} value={post} required/>
 //          </div>
 //          <div className="imageIcon_tweetButton">
 //             <label htmlFor="image" className="imageIcon">
@@ -106,12 +106,12 @@
 import { useState } from "react";
 import { Avatar, Button } from "@mui/material";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
-import axios from 'axios';
+import axios from "axios";
 import "./Tweetbox.css";
 import userLoggedInUser from "../../../hooks/userLoggedInUser";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 const Tweetbox = () => {
   const { t } = useTranslation();
@@ -124,15 +124,21 @@ const Tweetbox = () => {
   const [user] = useAuthState(auth);
   const email = user?.email;
 
-  const UserProfilePic = loggedInUser[0]?.profileImage || "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png";
+  const UserProfilePic =
+    loggedInUser[0]?.profileImage ||
+    "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png";
 
   const handleUploadImage = (e) => {
     setIsLoading(true);
     const image = e.target.files[0];
     const formData = new FormData();
-    formData.set('image', image);
-    axios.post("https://api.imgbb.com/1/upload?key=760c1f653f3b01a8871188b68dc18f80", formData)
-      .then(res => {
+    formData.set("image", image);
+    axios
+      .post(
+        "https://api.imgbb.com/1/upload?key=760c1f653f3b01a8871188b68dc18f80",
+        formData
+      )
+      .then((res) => {
         setImageURL(res.data.data.display_url);
         setIsLoading(false);
       })
@@ -144,14 +150,16 @@ const Tweetbox = () => {
 
   const handleTweet = (e) => {
     e.preventDefault();
-    if (user.providerData[0].providerId === 'password') {
-      fetch(`https://twibb.vercel.app/loggedInUser?email=${email}`).then(res => res.json()).then(data => {
-        setName(data[0]?.name);
-        setUsername(data[0]?.username);
-      });
+    if (user.providerData[0].providerId === "password") {
+      fetch(`https://twibb.vercel.app/loggedInUser?email=${email}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setName(data[0]?.name);
+          setUsername(data[0]?.username);
+        });
     } else {
       setName(user?.displayName);
-      setUsername(email?.split('@')[0]);
+      setUsername(email?.split("@")[0]);
     }
     if (name) {
       const userPost = {
@@ -160,28 +168,33 @@ const Tweetbox = () => {
         photo: imageURL,
         username: username,
         name: name,
-        email: email
+        email: email,
       };
-      setPost('');
-      setImageURL('');
+      setPost("");
+      setImageURL("");
       fetch(`https://twibb.vercel.app/post`, {
         method: "POST",
         headers: {
-          'content-type': 'application/json'
+          "content-type": "application/json",
         },
-        body: JSON.stringify(userPost)
-      }).then(res => res.json()).then(data => {
-        console.log(data);
-      }).then(() => {
-        // Fetch notifications after posting
-        fetch('/notifications')
-          .then(response => response.json())
-          .then(data => {
-            // You can handle the fetched notifications here if needed
-            console.log('Notifications:', data);
-          })
-          .catch(error => console.error('Error fetching notifications:', error));
-      });
+        body: JSON.stringify(userPost),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        })
+        .then(() => {
+          // Fetch notifications after posting
+          fetch("/notifications")
+            .then((response) => response.json())
+            .then((data) => {
+              // You can handle the fetched notifications here if needed
+              console.log("Notifications:", data);
+            })
+            .catch((error) =>
+              console.error("Error fetching notifications:", error)
+            );
+        });
     }
   };
 
@@ -189,16 +202,36 @@ const Tweetbox = () => {
     <div className="tweetBox">
       <form onSubmit={handleTweet}>
         <div className="tweetBox__input">
-          <Avatar src={loggedInUser[0]?.profileImage || "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"}></Avatar>
-          <input type="text" placeholder={t('home2')} onChange={(e) => setPost(e.target.value)} value={post} />
+          <Avatar
+            src={
+              loggedInUser[0]?.profileImage ||
+              "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
+            }
+          ></Avatar>
+          <input
+            type="text"
+            placeholder={t("home2")}
+            onChange={(e) => setPost(e.target.value)}
+            value={post}
+            required
+          />
         </div>
         <div className="imageIcon_tweetButton">
           <label htmlFor="image" className="imageIcon">
-            {isLoading ? <p>Uploading image</p> : <p>{imageURL ? 'image uploaded' : <AddPhotoAlternateIcon />}</p>}
+            {isLoading ? (
+              <p>Uploading image</p>
+            ) : (
+              <p>{imageURL ? "image uploaded" : <AddPhotoAlternateIcon />}</p>
+            )}
           </label>
-          <input type="file" id="image" className="imageInput" onChange={handleUploadImage} />
+          <input
+            type="file"
+            id="image"
+            className="imageInput"
+            onChange={handleUploadImage}
+          />
           <Button className="tweetBox__tweetButton" type="submit">
-            {t('home3')}
+            {t("home3")}
           </Button>
         </div>
       </form>

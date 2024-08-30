@@ -1,4 +1,4 @@
-# Twibble - A Comprehensive Twitter Clone
+# Twibble - A Comprehensive Social Media 
 
 Twibble is a feature-rich Twitter clone developed during the NullClass Fullstack Internship. This project aims to provide users with a seamless social media experience, incorporating advanced features such as subscription plans, multi-language support, and enhanced security measures.
 

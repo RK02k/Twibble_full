@@ -4,8 +4,6 @@ Twibble is a feature-rich Twitter clone developed during the NullClass Fullstack
 
 ## Project Link
 
-Deployed Project: [Link](https://frontend-t.onrender.com/)
-
 GitHub Repository: [Twibble on GitHub](https://github.com/RK02k/Twibble_full)
 
 ## Features
